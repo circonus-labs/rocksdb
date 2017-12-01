@@ -89,6 +89,7 @@ struct ImmutableCFOptions {
   bool purge_redundant_kvs_while_flush;
 
   bool use_fsync;
+  bool disable_data_sync;
 
   std::vector<CompressionType> compression_per_level;
 

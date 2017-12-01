@@ -189,7 +189,8 @@ static std::unordered_map<std::string, OptionTypeInfo> db_options_type_info = {
     {"disableDataSync",
      {0, OptionType::kBoolean, OptionVerificationType::kDeprecated, false, 0}},
     {"disable_data_sync",  // for compatibility
-     {0, OptionType::kBoolean, OptionVerificationType::kDeprecated, false, 0}},
+     {offsetof(struct DBOptions, disable_data_sync), 
+      OptionType::kBoolean, OptionVerificationType::kNormal, false, 0}},
     {"enable_thread_tracking",
      {offsetof(struct DBOptions, enable_thread_tracking), OptionType::kBoolean,
       OptionVerificationType::kNormal, false, 0}},

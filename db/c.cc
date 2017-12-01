@@ -2169,6 +2169,12 @@ void rocksdb_options_set_prefix_extractor(
   opt->rep.prefix_extractor.reset(prefix_extractor);
 }
 
+void rocksdb_options_set_disable_data_sync(
+    rocksdb_options_t* opt, int disable_data_sync) {
+  opt->rep.disable_data_sync = disable_data_sync;
+}
+
+
 void rocksdb_options_set_use_fsync(
     rocksdb_options_t* opt, int use_fsync) {
   opt->rep.use_fsync = use_fsync;
