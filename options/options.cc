@@ -132,6 +132,7 @@ DBOptions::DBOptions(const Options& options)
       max_total_wal_size(options.max_total_wal_size),
       statistics(options.statistics),
       use_fsync(options.use_fsync),
+      disable_data_sync(options.disable_data_sync),
       db_paths(options.db_paths),
       db_log_dir(options.db_log_dir),
       wal_dir(options.wal_dir),
