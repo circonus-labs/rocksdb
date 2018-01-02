@@ -180,7 +180,7 @@ void ThreadPoolImpl::Impl::BGThread(size_t thread_id) {
     // Stop waiting if the thread needs to do work or needs to terminate.
     while (!exit_all_threads_ && !IsLastExcessiveThread(thread_id) &&
            (queue_.empty() || IsExcessiveThread(thread_id))) {
-      bgsignal_.wait(lock);
+      bgsignal_.wait_for(lock, std::chrono::seconds(10));
     }
 
     if (exit_all_threads_) {  // mechanism to let BG threads exit safely
